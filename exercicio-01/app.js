@@ -63,7 +63,7 @@ acontece.
 */
 
 const myAge = currentYear - myBirthYear
-console.log(myAge);
+console.log("I'm " + myAge + " years old");
 
 /*
 09 - Antes do console.log abaixo, declare uma const "ten", que recebe o número  
