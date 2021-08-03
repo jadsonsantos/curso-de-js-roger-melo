@@ -10,6 +10,18 @@
   - Exiba o objeto no console.
 */
 
+let cat = {
+  name: 'Roger',
+  age: 2,
+  color: 'white',
+  bestFriends: ['John', 'Jane'],
+  sound: function () {
+    return 'Miau!!!'
+  }
+}
+
+console.log(cat.sound());
+
 /*
   02
 
@@ -25,6 +37,9 @@
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
 
+cat.age += 2;
+console.log(cat.age);
+
 /*
   04
 
@@ -32,6 +47,9 @@
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
+
+cat.bestFriends.push('Clark');
+console.log(cat.bestFriends);
 
 /*
   05
@@ -42,6 +60,8 @@
     colchetes.
 */
 
+
+
 /*
   06
 
@@ -49,6 +69,12 @@
     parâmetro é um objeto;
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
+
+function checkObject(value) { 
+  return typeof value === 'object' ? true : false;
+}
+
+console.log(checkObject(cat));
 
 /*
   07
@@ -60,6 +86,24 @@
   "A soma das idades de NOME_DO_GATO e NOME_DO_CACHORRO é RESULTADO_DA_SOMA."
 */
 
+let dog = {
+  name: 'Barry',
+  age: 3,
+  color: 'white',
+  bestFriends: ['John', 'Jane'],
+  sound: function () {
+    return 'Auau!!!'
+  }
+}
+
+function renderAnimalsAge () {
+  agesSum = cat.age + dog.age;
+  let message = 'A soma das idades de ' + cat.name + ' e ' + dog.name + ' é ' + agesSum;
+  return message;
+}
+
+console.log(renderAnimalsAge());
+
 /*
   08
 
@@ -69,15 +113,26 @@
 */
 
 const isAnSUV = car => {
-  if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
-    return true
+  switch (car) {
+    case 'Honda HR-V':
+      return true;
+    case 'Jeep Renegade':
+      return true;
+    case 'Ford EcoSport':
+      return true;
+    case 'Hyundai iX35':
+      return true;
+    default: return false;
   }
+  // if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
+  //   return true
+  // }
 
-  return false
+  // return false
 }
 
-// console.log(isAnSUV('Honda Civic'))
-// console.log(isAnSUV('Ford EcoSport'))
+console.log(isAnSUV('Honda Civic'))
+console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
@@ -91,3 +146,17 @@ const isAnSUV = car => {
     propriedades, retorne a mensagem que a propriedade armazena;
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
+
+function teste (type) { 
+  let obj = {
+    null: function () {
+      console.log('Seta, explicitamente, uma variável sem valor.');
+    },
+    undefined: function () {
+      console.log('Representa um valor não-setado.');
+    },
+    object: function () {
+      console.log('Arrays, Datas, Objetos literais, Funções, etc.');
+    }
+  };
+}
